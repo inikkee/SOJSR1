@@ -27,12 +27,13 @@ function App() {
     setFormData({
       name: event.target.name,
       value: event.target.value,
+      price: event.target.price,
     })
   }
 
   return (
     <div className="wrapper">
-      <h1>Nimesi</h1>
+      <h1>Maalin perustiedot</h1>
       {submitting &&
       <div>Lähetät seuraavat tiedot:
         <ul>
@@ -43,12 +44,7 @@ function App() {
       </div>
       }
       <form onSubmit={handleSubmit}>
-        <fieldset>
-          <label>
-            <p>Nimi</p>
-            <input name="name" onChange={handleChange}/>
-          </label>
-        </fieldset>
+        
         <fieldset>
           <label>
             <p>Maalit</p>
@@ -61,8 +57,19 @@ function App() {
             </select>
           </label>
           <label>
-            <p>Litra</p>
+            <p>Hinta (€/l)</p>
+            <input type="number" name="price" onChange={handleChange} step="1"/>
+            <p>Riittoisuus (m2/l)</p>
             <input type="number" name="count" onChange={handleChange} step="1"/>
+          </label>
+          <label>
+            <p>Kuinka monta maalauskertaa?</p>
+            <select name="maalauskerta" onChange={handleChange}>
+              <option value="">--Kuinka monta krt--</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
           </label>
         </fieldset>
         <button type="submit">Lähetä</button>
