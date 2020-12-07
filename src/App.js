@@ -1,23 +1,25 @@
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+
 function App() {
+  const handleSubmit = event => {
+    event.preventDefault();
+    alert('Kaavake lähetetty.')
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <h1>Nimesi</h1>
+      <form onSubmit={handleSubmit}>
+        <fieldset>
+          <label>
+            <p>Nimi</p>
+            <input name="name"/>
+          </label>
+        </fieldset>
+        <button type="submit">Lähetä"</button>
+      </form>
     </div>
   );
 }
