@@ -1,0 +1,46 @@
+[
+    {
+        "nimi": "Ensimmäinen asunto",
+        "tilojenTiedot": [
+            {
+                "tilanNimi": "Olohuone",
+                "pintaala": 12
+            },
+            {
+                "tilanNimi": "Makuuhuone",
+                "pintaala": 14
+            },
+            {
+                "tilanNimi": "Kylpyhuone",
+                "pintaala": 9
+            },
+            {
+                "tilanNimi": "Keittiö",
+                "pintaala": 16
+            }
+        ],
+        "kokonaisPintaala": 51,
+        "tyyppikerroin": 1
+    },
+    {
+        "nimi": "Toinen asunto",
+        "tilojenTiedot": [
+            {
+                "tilanNimi": "Olohuone",
+                "pintaala": 16
+            },
+            {
+                "tilanNimi": "Kylpyhuone",
+                "pintaala": 11
+            },
+            {
+                "tilanNimi": "Keittiö",
+                "pintaala": 17
+            }
+        ],
+        "kokonaisPintaala": 60,
+        "tyyppikerroin": 1.4
+    }
+]
+
+
