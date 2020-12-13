@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import Data from "../data/tilat.json"
 import Perustiedot from "./Perustiedot"
@@ -24,14 +23,17 @@ export default class Form extends React.Component {
 
   }
 
+
   render() {
     return (
 
-      
       <span>
+
+
         <h1>Maalin perustiedot</h1>
         <fieldset>
           <label>
+
             <p>Maalit</p>
             <select name="maalit" value={this.state.maalit} onChange={this.handleChange} placeholder="Maali" >
               <option value="">--Valitse maali--</option>
@@ -42,7 +44,7 @@ export default class Form extends React.Component {
             </select>
           </label>
 
-          <br/>
+          <br />
           <label>
             <p>Hinta (€/l)</p>
             <input value={this.state.price} onChange={this.handleChange} name="price" placeholder="Hinta" /> <br />
@@ -61,25 +63,101 @@ export default class Form extends React.Component {
             </select>
           </label>
         </fieldset>
-        <br/><br/>
+        <br /><br />
         <fieldset>
-          <br/><br/>
-          Tilan maalintarpeet:(TilanPintaala * {this.state.count} * maalintyyppikerroin * {this.state.maalauskerta} )
-        <br/>
-          Tilan kustannukset: (Tilan maalintarpeet * {this.state.price})
-        <br/><br/>
-          Asunnon maalintarve: {this.state.maalauskerta * this.state.count} * AsunnonPintaala
-          <br/>
 
-          Asunnon kustannukset: {this.state.price} * Asunnon maalintarpeet
-        <br/><br/>
-          Taloyhtiön maalintarve: (asuntojen maalintarpeet summataan keskenään)
+<fieldset>
+    <Perustiedot></Perustiedot>
+    </fieldset>
 
-        <br/>
-          Taloyhtiön kustannukset: (asuntojen kustannukset summataan keskenään)
+
+          {Data.map((Details, id) => {
+            <li key={Details.id}></li>
+            return <div>
+<fieldset>
+
+              <h2>Ensimmäisen Asunnon maalintarpeet ja kustannukset</h2>
+          <br /><br />
+              {Details.Asunnot.Asunto1.Tila1.tilanNimi}en maalintarpeet: {Details.Asunnot.Asunto1.Tila1.pintaala * Number(this.state.count) * Details.Asunnot.Asunto1.tyyppikerroin * Number(this.state.maalauskerta)} litraa
+        <br />
+              {Details.Asunnot.Asunto1.Tila1.tilanNimi} kustannukset: {Details.Asunnot.Asunto1.Tila1.pintaala * Number(this.state.count) * Details.Asunnot.Asunto1.tyyppikerroin * Number(this.state.maalauskerta) * Number(this.state.price)}
+              <br /><br />
+
+              <br /><br />
+              {Details.Asunnot.Asunto1.Tila2.tilanNimi}en maalintarpeet: {Details.Asunnot.Asunto1.Tila2.pintaala * Number(this.state.count) * Details.Asunnot.Asunto1.tyyppikerroin * Number(this.state.maalauskerta)} litraa
+        <br />
+              {Details.Asunnot.Asunto1.Tila2.tilanNimi} kustannukset: {Details.Asunnot.Asunto1.Tila2.pintaala * Number(this.state.count) * Details.Asunnot.Asunto1.tyyppikerroin * Number(this.state.maalauskerta) * Number(this.state.price)}
+              <br /><br />
+
+              <br /><br />
+              {Details.Asunnot.Asunto1.Tila3.tilanNimi}en maalintarpeet: {Details.Asunnot.Asunto1.Tila3.pintaala * Number(this.state.count) * Details.Asunnot.Asunto1.tyyppikerroin * Number(this.state.maalauskerta)} litraa
+        <br />
+              {Details.Asunnot.Asunto1.Tila3.tilanNimi} kustannukset: {Details.Asunnot.Asunto1.Tila3.pintaala * Number(this.state.count) * Details.Asunnot.Asunto1.tyyppikerroin * Number(this.state.maalauskerta) * Number(this.state.price)}
+              <br /><br />
+
+              <br /><br />
+              {Details.Asunnot.Asunto1.Tila4.tilanNimi}n maalintarpeet: {Details.Asunnot.Asunto1.Tila4.pintaala * Number(this.state.count) * Details.Asunnot.Asunto1.tyyppikerroin * Number(this.state.maalauskerta)} litraa
+        <br />
+              {Details.Asunnot.Asunto1.Tila4.tilanNimi} kustannukset: {Details.Asunnot.Asunto1.Tila4.pintaala * Number(this.state.count) * Details.Asunnot.Asunto1.tyyppikerroin * Number(this.state.maalauskerta) * Number(this.state.price)}
+              <br /><br />
+
+          Asunnon maalintarve: {Number(this.state.maalauskerta) * Number(this.state.count) * Details.Asunnot.Asunto1.kokonaisPintaala}
+              <br />
+
+          Asunnon kustannukset: {Number(this.state.price) * Number(this.state.maalauskerta) * Number(this.state.count) * Details.Asunnot.Asunto1.kokonaisPintaala}
+              <br /><br />
+              </fieldset>
+
+<fieldset>
+              <h2>Toisen Asunnon maalintarpeet ja kustannukset</h2>
+
+        <br /><br />
+              {Details.Asunnot.Asunto2.Tila1.tilanNimi}en maalintarpeet: {Details.Asunnot.Asunto2.Tila1.pintaala * Number(this.state.count) * Details.Asunnot.Asunto2.tyyppikerroin * Number(this.state.maalauskerta)} litraa
+        <br />
+              {Details.Asunnot.Asunto2.Tila1.tilanNimi} kustannukset: {Details.Asunnot.Asunto2.Tila1.pintaala * Number(this.state.count) * Details.Asunnot.Asunto2.tyyppikerroin * Number(this.state.maalauskerta) * Number(this.state.price)}
+              <br /><br />
+
+              <br /><br />
+              {Details.Asunnot.Asunto2.Tila2.tilanNimi}en maalintarpeet: {Details.Asunnot.Asunto2.Tila2.pintaala * Number(this.state.count) * Details.Asunnot.Asunto2.tyyppikerroin * Number(this.state.maalauskerta)} litraa
+        <br />
+              {Details.Asunnot.Asunto2.Tila2.tilanNimi} kustannukset: {Details.Asunnot.Asunto2.Tila2.pintaala * Number(this.state.count) * Details.Asunnot.Asunto2.tyyppikerroin * Number(this.state.maalauskerta) * Number(this.state.price)}
+              <br /><br />
+
+              <br /><br />
+              {Details.Asunnot.Asunto2.Tila3.tilanNimi}en maalintarpeet: {Details.Asunnot.Asunto2.Tila3.pintaala * Number(this.state.count) * Details.Asunnot.Asunto2.tyyppikerroin * Number(this.state.maalauskerta)} litraa
+        <br />
+              {Details.Asunnot.Asunto2.Tila3.tilanNimi} kustannukset: {Details.Asunnot.Asunto2.Tila3.pintaala * Number(this.state.count) * Details.Asunnot.Asunto2.tyyppikerroin * Number(this.state.maalauskerta) * Number(this.state.price)}
+              <br /><br />
+
+
+
+          Asunnon maalintarve: {Number(this.state.maalauskerta) * Number(this.state.count) * Details.Asunnot.Asunto2.kokonaisPintaala}
+              <br />
+
+          Asunnon kustannukset: {Number(this.state.price) * Number(this.state.maalauskerta) * Number(this.state.count) * Details.Asunnot.Asunto2.kokonaisPintaala}
+              <br /><br />
+
+              </fieldset>
+
+<fieldset>
+
+  <h2> Koko Taloyhtiön tarpeet ja kustannukset</h2>
+  
+          Taloyhtiön maalintarve: {Number(this.state.maalauskerta) * Number(this.state.count) * Details.Asunnot.Asunto2.kokonaisPintaala + Number(this.state.maalauskerta) * Number(this.state.count) * Details.Asunnot.Asunto1.kokonaisPintaala}
+
+              <br />
+          Taloyhtiön kustannukset: {Number(this.state.price) * Number(this.state.maalauskerta) * Number(this.state.count) * Details.Asunnot.Asunto2.kokonaisPintaala + Number(this.state.price) * Number(this.state.maalauskerta) * Number(this.state.count) * Details.Asunnot.Asunto1.kokonaisPintaala}
+            
           </fieldset>
+            
+            </div>
 
-          <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+          })}
+
+         
+
+        </fieldset>
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
 
 

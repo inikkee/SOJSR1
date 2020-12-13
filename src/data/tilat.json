@@ -1,46 +1,44 @@
 [
     {
-        "nimi": "Ensimmäinen asunto",
-        "tilojenTiedot": [
-            {
-                "tilanNimi": "Olohuone",
-                "pintaala": 12
+        "Asunnot": {
+            "Asunto1": {
+                "id": "1",
+                "kokonaisPintaala": 51,
+                "tyyppikerroin": 1,
+                "Tila1": {
+                    "tilanNimi": "Olohuone",
+                    "pintaala": 12
+                },
+                "Tila2": {
+                    "tilanNimi": "Makuuhuone",
+                    "pintaala": 14
+                },
+                "Tila3": {
+                    "tilanNimi": "Kylpyhuone",
+                    "pintaala": 9
+                },
+                "Tila4": {
+                    "tilanNimi": "Keittiö",
+                    "pintaala": 16
+                }
             },
-            {
-                "tilanNimi": "Makuuhuone",
-                "pintaala": 14
-            },
-            {
-                "tilanNimi": "Kylpyhuone",
-                "pintaala": 9
-            },
-            {
-                "tilanNimi": "Keittiö",
-                "pintaala": 16
+            "Asunto2": {
+                "id": "2",
+                "kokonaisPintaala": 60,
+                "tyyppikerroin": 1.4,
+                "Tila1": {
+                    "tilanNimi": "Olohuone",
+                    "pintaala": 13
+                },
+                "Tila2": {
+                    "tilanNimi": "Makuuhuone",
+                    "pintaala": 10
+                },
+                "Tila3": {
+                    "tilanNimi": "Kylpyhuone",
+                    "pintaala": 9
+                }
             }
-        ],
-        "kokonaisPintaala": 51,
-        "tyyppikerroin": 1
-    },
-    {
-        "nimi": "Toinen asunto",
-        "tilojenTiedot": [
-            {
-                "tilanNimi": "Olohuone",
-                "pintaala": 16
-            },
-            {
-                "tilanNimi": "Kylpyhuone",
-                "pintaala": 11
-            },
-            {
-                "tilanNimi": "Keittiö",
-                "pintaala": 17
-            }
-        ],
-        "kokonaisPintaala": 60,
-        "tyyppikerroin": 1.4
+        }
     }
 ]
-
-

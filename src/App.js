@@ -15,11 +15,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Form name={this.state.name} />
+        <Form name={this.state.name}/>
       
        
-        
-
       </div>
     );
   }
