@@ -29,9 +29,12 @@ export default class Form extends React.Component {
 
       <span>
 
-
-        <h1>Maalin perustiedot</h1>
+        
+        
+        <div id="maalilaskuri">
+        
         <fieldset>
+        <h2>Maalin perustiedot</h2>
           <label>
 
             <p>Maalit</p>
@@ -63,7 +66,9 @@ export default class Form extends React.Component {
             </select>
           </label>
         </fieldset>
-        <br /><br />
+        </div>
+       
+        <div id="tiedot">
         <fieldset>
 
 <fieldset>
@@ -157,10 +162,11 @@ export default class Form extends React.Component {
          
 
         </fieldset>
+        </div>
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
 
-
+        
       </span >
     );
   }

@@ -1,46 +1,59 @@
-.App {
-  text-align: center;
+body {
+	background-image: url("../src/images/talo.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-color: #ffffffff;
+	margin: 0 10%;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	}
+	
+h1 {
+	text-align: center;
+	font-size: 3em;
+	color: #000000;
+	text-transform: uppercase;
+	margin-top: 30px;
+	}
+	
+h2 {
+	text-align: center;
+	color: #000000;
+	font-size: 1,5em;
+	font-style: bold;
+	}
+	
+p	{
+	text-align: center;
+	color: #000000;
+	}
+
+#maalilaskuri {
+	margin: auto;
+	position: relative;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 600px;
+	height: 360px;
+	padding: 5px 20px;
+	background: #FFFFFF;
+
+	text-align: center;
+ }
+		
+#tiedot {
+	margin: auto;
+	position: relative;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 600px;
+	height: 1410px;
+	padding: 5px 20px;
+	background: #FFFFFF;
+
+	text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.wrapper {
-  padding: 5px 20px;
-}
-
-.wrapper fieldset {
-  margin: 20px 0;
-}
