@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Form from './components/Form';
-import Perustiedot from "./components/Perustiedot"
 
 
 

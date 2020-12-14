@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Data from "../data/tilat.json"
 import Perustiedot from "./Perustiedot"
 import '../App.css';
+import AsuntojenPerusTiedot from "./AsuntojenPerusTiedot"
 
 export default class Form extends React.Component {
 
@@ -15,10 +16,6 @@ export default class Form extends React.Component {
   handleChange(e) {
     let value = e.target.value;
     this.setState({ [e.target.name]: value }, function () {
-      let maalit = Number(this.state.maalit);
-      let price = Number(this.state.price);
-      let count = Number(this.state.count);
-      let maalauskerta = Number(this.state.maalauskerta);
     });
 
   }
@@ -26,6 +23,8 @@ export default class Form extends React.Component {
   render() {
 
     return (
+
+
 
       <span>
 
@@ -72,13 +71,12 @@ export default class Form extends React.Component {
    
 
             <fieldset>
-              <Perustiedot></Perustiedot>
+              <Perustiedot />
             </fieldset>
 
 
-            {Data.map((Details, id) => {
-              <li key={Details.id}></li>
-
+            {Data.map((Details, id) =>  {
+             <AsuntojenPerusTiedot Tiedot={Details} key={`post-list-key' ${id}`} />
 
 
               //Formin syötettyjen tietojen määritykset
@@ -131,12 +129,10 @@ export default class Form extends React.Component {
               let Asunto2_Kaikki_Kustannukset = Asunto2_KokonaispintaAla / Maalin_Riittoisuus * Maalauskertojen_Määrä * Hinta
 
 
+              return <div id="Laskujen tulokset">
 
 
-
-
-              return <div>
-                <fieldset>
+                <fieldset id="asd">
 
                   <h2>Ensimmäisen Asunnon maalintarpeet ja kustannukset</h2>
                   <br /><br />
@@ -200,7 +196,7 @@ export default class Form extends React.Component {
 
                 </fieldset>
 
-                <fieldset>
+                <fieldset id="7">
 
                   <h2> Koko Taloyhtiön tarpeet ja kustannukset</h2>
 
@@ -219,8 +215,6 @@ export default class Form extends React.Component {
           </fieldset>
         </div>
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-
-
 
       </span >
     );
