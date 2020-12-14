@@ -128,6 +128,9 @@ export default class Form extends React.Component {
               let Asunto2_Maalintarpeet = Asunto2_KokonaispintaAla / Maalin_Riittoisuus * Maalauskertojen_Määrä
               let Asunto2_Kaikki_Kustannukset = Asunto2_KokonaispintaAla / Maalin_Riittoisuus * Maalauskertojen_Määrä * Hinta
 
+              let Yhtio_Maalintarpeet = Asunto1_Maalintarpeet + Asunto2_Maalintarpeet
+              let Yhtio_Kaikki_Kustannukset = Asunto1_Kaikki_Kustannukset + Asunto2_Kaikki_Kustannukset
+
 
               return <div id="Laskujen tulokset">
 
@@ -200,10 +203,10 @@ export default class Form extends React.Component {
 
                   <h2> Koko Taloyhtiön tarpeet ja kustannukset</h2>
 
-          Taloyhtiön maalintarve: {Asunto1_Maalintarpeet + Asunto2_Maalintarpeet} litraa
+          Taloyhtiön maalintarve: {Yhtio_Maalintarpeet.toFixed(1)} litraa
 
                   <br />
-          Taloyhtiön kustannukset: {Asunto1_Kaikki_Kustannukset + Asunto2_Kaikki_Kustannukset} euroa
+          Taloyhtiön kustannukset: {Yhtio_Kaikki_Kustannukset.toFixed(1)} euroa
                 </fieldset>
 
               </div>
