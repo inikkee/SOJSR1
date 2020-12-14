@@ -24,8 +24,8 @@
             },
             "Asunto2": {
                 "id": "2",
-                "kokonaisPintaala": 60,
-                "tyyppikerroin": 1.4,
+                "kokonaisPintaala": 32,
+                "tyyppikerroin": 1.3,
                 "Tila1": {
                     "tilanNimi": "Olohuone",
                     "pintaala": 13
