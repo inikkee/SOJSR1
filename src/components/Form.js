@@ -13,11 +13,24 @@ export default class Form extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+ /* CheckisNaN=()=> {
+    if(isNaN(this.state.value, this.state.count, this.state.price, this.state.maalauskerta)){console.log("moro");
+    Asunto1_Tila1_Maalintarpeet = 0;
+      /*Asunto1_Tila1_Maalintarpeet, Asunto1_Tila2_Maalintarpeet, Asunto1_Tila3_Maalintarpeet, Asunto1_Tila4_Maalintarpeet,
+      Asunto1_Tila1_Ala, Asunto1_Tila2_Ala, Asunto1_Tila3_Ala, Asunto1_Tila4_Ala,
+      Asunto1_Tila1_Hinta, Asunto1_Tila2_Hinta, Asunto1_Tila3_Hinta, Asunto1_Tila4_Hinta,
+      Asunto2_Tila1_Maalintarpeet, Asunto2_Tila2_Maalintarpeet, Asunto2_Tila3_Maalintarpeet,
+      Asunto2_Tila1_Ala, Asunto2_Tila2_Ala, Asunto2_Tila3_Ala
+      )){console.log("moro");
+              Asunto1_Tila1_Maalintarpeet = 0;
+    }*/
+  
+
   handleChange(e) {
     let value = e.target.value;
     this.setState({ [e.target.name]: value }, function () {
     });
-
+  
   }
 
   render() {
@@ -80,9 +93,9 @@ export default class Form extends React.Component {
 
 
               //Formin syötettyjen tietojen määritykset
-              let Maalin_Riittoisuus = Number(this.state.count)
-              let Hinta = Number(this.state.price)
-              let Maalauskertojen_Määrä = Number(this.state.maalauskerta)
+              let Maalin_Riittoisuus = Number(this.state.count || 0)
+              let Hinta = Number(this.state.price || 0)
+              let Maalauskertojen_Määrä = Number(this.state.maalauskerta || 0)
 
 
               //Asunto1 Laskut ja määritykset
@@ -94,14 +107,39 @@ export default class Form extends React.Component {
               let Asunto1_Tyyppikerroin = Details.Asunnot.Asunto1.tyyppikerroin;
 
               let Asunto1_Tila1_Maalintarpeet = Asunto1_Tila1_Ala / Maalin_Riittoisuus * Asunto1_Tyyppikerroin * Maalauskertojen_Määrä
+              if(isNaN(Asunto1_Tila1_Maalintarpeet)){console.log("moro");
+              Asunto1_Tila1_Maalintarpeet = 0;
+              }
+              
               let Asunto1_Tila2_Maalintarpeet = Asunto1_Tila2_Ala / Maalin_Riittoisuus * Asunto1_Tyyppikerroin * Maalauskertojen_Määrä
+              if(isNaN(Asunto1_Tila2_Maalintarpeet)){console.log("moro");
+              Asunto1_Tila2_Maalintarpeet = 0;
+              }
               let Asunto1_Tila3_Maalintarpeet = Asunto1_Tila3_Ala / Maalin_Riittoisuus * Asunto1_Tyyppikerroin * Maalauskertojen_Määrä
+              if(isNaN(Asunto1_Tila3_Maalintarpeet)){console.log("moro");
+              Asunto1_Tila3_Maalintarpeet = 0;
+              }
               let Asunto1_Tila4_Maalintarpeet = Asunto1_Tila4_Ala / Maalin_Riittoisuus * Asunto1_Tyyppikerroin * Maalauskertojen_Määrä
+              if(isNaN(Asunto1_Tila4_Maalintarpeet)){console.log("moro");
+              Asunto1_Tila4_Maalintarpeet = 0;
+              }
 
               let Asunto1_Tila1_Hinta = Asunto1_Tila1_Ala / Maalin_Riittoisuus * Asunto1_Tyyppikerroin * Maalauskertojen_Määrä * Hinta
+              if(isNaN(Asunto1_Tila1_Hinta)){console.log("moro");
+              Asunto1_Tila1_Hinta = 0;
+              }
               let Asunto1_Tila2_Hinta = Asunto1_Tila2_Ala / Maalin_Riittoisuus * Asunto1_Tyyppikerroin * Maalauskertojen_Määrä * Hinta
+              if(isNaN(Asunto1_Tila2_Hinta)){console.log("moro");
+              Asunto1_Tila2_Hinta = 0;
+              }
               let Asunto1_Tila3_Hinta = Asunto1_Tila3_Ala / Maalin_Riittoisuus * Asunto1_Tyyppikerroin * Maalauskertojen_Määrä * Hinta
+              if(isNaN(Asunto1_Tila3_Hinta)){console.log("moro");
+              Asunto1_Tila3_Hinta = 0;
+              }
               let Asunto1_Tila4_Hinta = Asunto1_Tila4_Ala / Maalin_Riittoisuus * Asunto1_Tyyppikerroin * Maalauskertojen_Määrä * Hinta
+              if(isNaN(Asunto1_Tila4_Hinta)){console.log("moro");
+              Asunto1_Tila4_Hinta = 0;
+              }
 
 
               //Asunto 2 Laskut ja määritykset
@@ -113,23 +151,59 @@ export default class Form extends React.Component {
 
 
               let Asunto2_Tila1_Maalintarpeet = Asunto2_Tila1_Ala / Maalin_Riittoisuus * Asunto2_Tyyppikerroin * Maalauskertojen_Määrä
+              if(isNaN(Asunto2_Tila1_Maalintarpeet)){console.log("moro");
+              Asunto2_Tila1_Maalintarpeet = 0;
+              }
               let Asunto2_Tila2_Maalintarpeet = Asunto2_Tila2_Ala / Maalin_Riittoisuus * Asunto2_Tyyppikerroin * Maalauskertojen_Määrä
+              if(isNaN(Asunto2_Tila2_Maalintarpeet)){console.log("moro");
+              Asunto2_Tila2_Maalintarpeet = 0;
+              }
               let Asunto2_Tila3_Maalintarpeet = Asunto2_Tila3_Ala / Maalin_Riittoisuus * Asunto2_Tyyppikerroin * Maalauskertojen_Määrä
+              if(isNaN(Asunto2_Tila3_Maalintarpeet)){console.log("moro");
+              Asunto2_Tila3_Maalintarpeet = 0;
+              }
 
               let Asunto2_Tila1_Hinta = Asunto2_Tila1_Ala / Maalin_Riittoisuus * Asunto2_Tyyppikerroin * Maalauskertojen_Määrä * Hinta
+              if(isNaN(Asunto2_Tila1_Hinta)){console.log("moro");
+              Asunto2_Tila1_Hinta = 0;
+              }
               let Asunto2_Tila2_Hinta = Asunto2_Tila2_Ala / Maalin_Riittoisuus * Asunto2_Tyyppikerroin * Maalauskertojen_Määrä * Hinta
+              if(isNaN(Asunto2_Tila2_Hinta)){console.log("moro");
+              Asunto2_Tila2_Hinta = 0;
+              }
               let Asunto2_Tila3_Hinta = Asunto2_Tila3_Ala / Maalin_Riittoisuus * Asunto2_Tyyppikerroin * Maalauskertojen_Määrä * Hinta
+              if(isNaN(Asunto2_Tila3_Hinta)){console.log("moro");
+              Asunto2_Tila3_Hinta = 0;
+              }
 
 
               //Asuntojen Laskut
               let Asunto1_Maalintarpeet = Asunto1_KokonaispintaAla / Maalin_Riittoisuus * Maalauskertojen_Määrä
+              if(isNaN(Asunto1_Maalintarpeet)){console.log("moro");
+              Asunto1_Maalintarpeet = 0;
+              }
               let Asunto1_Kaikki_Kustannukset = Asunto1_KokonaispintaAla / Maalin_Riittoisuus * Maalauskertojen_Määrä * Hinta
+              if(isNaN(Asunto1_Kaikki_Kustannukset)){console.log("moro");
+              Asunto1_Kaikki_Kustannukset = 0;
+              }
 
               let Asunto2_Maalintarpeet = Asunto2_KokonaispintaAla / Maalin_Riittoisuus * Maalauskertojen_Määrä
+              if(isNaN(Asunto2_Maalintarpeet)){console.log("moro");
+              Asunto2_Maalintarpeet = 0;
+              }
               let Asunto2_Kaikki_Kustannukset = Asunto2_KokonaispintaAla / Maalin_Riittoisuus * Maalauskertojen_Määrä * Hinta
+              if(isNaN(Asunto2_Kaikki_Kustannukset)){console.log("moro");
+              Asunto2_Kaikki_Kustannukset = 0;
+              }
 
               let Yhtio_Maalintarpeet = Asunto1_Maalintarpeet + Asunto2_Maalintarpeet
+              if(isNaN(Yhtio_Maalintarpeet)){console.log("moro");
+              Yhtio_Maalintarpeet = 0;
+              }
               let Yhtio_Kaikki_Kustannukset = Asunto1_Kaikki_Kustannukset + Asunto2_Kaikki_Kustannukset
+              if(isNaN(Yhtio_Kaikki_Kustannukset)){console.log("moro");
+              Yhtio_Kaikki_Kustannukset = 0;
+              }
 
 
               return <div id="Laskujen tulokset">
